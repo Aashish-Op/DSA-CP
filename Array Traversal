@@ -1,0 +1,14 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+int main() {
+    // Write C++ code here
+    std::cout << "Start small. Ship something.";
+    
+    int arr[5] = {1,2,3,4,5};
+    
+    for(int i=0; i<5; i++){
+        std::cout<<arr[i];
+    }
+    return 0;
+}
