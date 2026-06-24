@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    vector<int> arr = { 10, 14, 16, 20 };
+    
+      int n = arr.size();
+       
+    vector<int> suffixSum(n, 0);
+
+    for(int i=0; i<n; i++) {
+        for(int j=i; j<n; j++) {
+            suffixSum[i] += arr[j]; 
+        }
+    }
+          
+    cout << "Suffix sum array: ";
+    for(int i=0; i<suffixSum.size(); i++) {
+        cout << suffixSum[i] << " ";
+    }
+      
+    return 0;
+}
