@@ -1,0 +1,27 @@
+class Solution {
+public:
+    bool checkSubarraySum(vector<int>& nums, int k) {
+        // Map to store the first occurrence index of each remainder
+        // Initialize with remainder 0 at index -1 to handle edge cases
+        unordered_map<int, int> remainderIndexMap{{0, -1}};
+      
+        int cumulativeSum = 0;
+      
+        // Iterate through the array
+        for (int i = 0; i < nums.size(); ++i) {
+            // Calculate cumulative sum modulo k
+            cumulativeSum = (cumulativeSum + nums[i]) % k;
+          
+            // If this remainder hasn't been seen before, record its first occurrence
+            if (remainderIndexMap.find(cumulativeSum) == remainderIndexMap.end()) {
+                remainderIndexMap[cumulativeSum] = i;
+            } 
+            // If remainder was seen before and subarray length is at least 2
+            else if (i - remainderIndexMap[cumulativeSum] > 1) {
+                return true;
+            }
+        }
+      
+        return false;
+    }
+};
