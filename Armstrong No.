@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int power(int base, int exp) {
+    int result = 1;
+    for (int i = 0; i < exp; i++) {
+        result *= base;
+    }
+    return result;
+}
+
+bool isArmstrong(int n) {
+    if (n < 0) return false; // Armstrong numbers are non-negative
+
+    int temp = n;
+    int digits = 0;
+
+    // Count digits
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    temp = n;
+    int sum = 0;
+
+    // Compute sum of digits^digits
+    while (temp > 0) {
+        int digit = temp % 10;
+        sum += power(digit, digits);
+        temp /= 10;
+    }
+
+    return sum == n;
+}
+
+int main() {
+    int n = 9474; // Example Armstrong number
+
+    if (isArmstrong(n)) {
+        cout << n << " is an Armstrong number." << endl;
+    } else {
+        cout << n << " is not an Armstrong number." << endl;
+    }
+
+    return 0;
+}
