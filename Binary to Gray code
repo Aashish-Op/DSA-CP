@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+// Function to convert Binary to Gray
+int binaryToGray(int num) {
+    return num ^ (num >> 1);  // XOR with right-shifted value
+}
+
+int main() {
+    int binary;
+    cout << "Enter a binary number (in decimal form): ";
+    cin >> binary;
+
+    int gray = binaryToGray(binary);
+    cout << "Gray code: " << gray << endl;
+
+    return 0;
+}
