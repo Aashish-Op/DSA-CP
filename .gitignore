@@ -1,0 +1,26 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Logs and local environment
+*.log
+.env
+.env.*
+!.env.example
+
+# JavaScript tooling
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Generated output
+coverage/
+dist/
+build/
+.cache/
